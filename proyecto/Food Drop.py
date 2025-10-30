@@ -109,10 +109,6 @@ while run == True:
     delta_y = 0
         
     if vida > 0:
-        # if mover_arriba == True:
-        #     delta_y = -5
-        # if mover_abajo == True:
-        #     delta_y = 5
         if mover_derecha == True:
             delta_x = 5
         if mover_izquierda == True:
@@ -274,29 +270,18 @@ while run == True:
                 mover_izquierda = True
             if evento.key == pygame.K_RIGHT:
                 mover_derecha = True
-            # if evento.key == pygame.K_w:
-            #     mover_arriba = True
-            # if evento.key == pygame.K_s:
-            #     mover_abajo = True
+
         if evento.type == pygame.KEYUP:
             if evento.key == pygame.K_LEFT:
                 mover_izquierda = False
             if evento.key == pygame.K_RIGHT:
                 mover_derecha = False
-        # if evento.key == pygame.K_w:
-        #     mover_arriba = False
-        # if evento.key == pygame.K_s:
-        #     mover_abajo = False
+        
     
     if vida < 1:
         ventana.fill(colores.AZUL)
         ventana.blit(texto_final, (100, 100))
         ventana.blit(texto_perder, (250, 200))
-
-        
-    
-    
-    
 
     pygame.display.update()
         
