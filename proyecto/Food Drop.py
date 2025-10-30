@@ -4,6 +4,7 @@ import colores
 from random import randint
 from comida import Comida
 from chatarra import Chatarra
+from extra import Extra
 
 pygame.init()
 
@@ -72,6 +73,11 @@ Chatarrita4 = Chatarra(xx4, yy4)
 xx5 = randint(10, 790)
 yy5 = -450
 Chatarrita5 = Chatarra(xx5, yy5)
+
+#Vida extra
+extraX = randint(15, 785)
+extraY = -800
+vida_extra = Extra(extraX, extraY)
 
 contador = 0
 
@@ -144,6 +150,22 @@ while run == True:
         Chatarrita3.movimientos(xx3, yy3)
         Chatarrita4.movimientos(xx4, yy4)
         Chatarrita5.movimientos(xx5, yy5)
+
+        if vida < 3:
+            vida_extra.dibujar(ventana)
+            vida_extra.movimientos(extraX, extraY)
+
+            if contador%10 == 0:
+                extraY += 20
+            
+            if extraY > 400:
+                extraX = randint(15, 785)
+                extraY -= 1200
+
+            if extraX in range(jugador.forma.left, jugador.forma.right) and extraY > jugador.forma.top:
+                extraX = randint(15, 785)
+                extraY -= 1200
+                vida += 1
 
         if contador%10 == 0:
             y1 += 15

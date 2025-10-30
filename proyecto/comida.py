@@ -12,3 +12,4 @@ class Comida(pygame.sprite.Sprite):
     def movimientos(self, x, y):
         self.forma.x = x
         self.forma.y = y
+        
