@@ -8,7 +8,7 @@ from chatarra import Chatarra
 pygame.init()
 
 ventana = pygame.display.set_mode((800, 400))
-pygame.display.set_caption("mi primer jueguito")
+pygame.display.set_caption("Food Drop Zoe")
 
 #texto y otras cosas:
 puntos = 0
